@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La carte d'Anaïs-ya : ramen, sushis, entrées et desserts japonais.">
+  <title>Anaïs-ya · La carte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">Anaïs-ya <span class="lanterne">🏮</span></a>
+      <input type="checkbox" id="burger-toggle" aria-label="Ouvrir le menu">
+      <label for="burger-toggle" class="burger" aria-hidden="true">☰</label>
+      <ul class="navigation">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="carte.html" class="actif">La carte</a></li>
+        <li><a href="contact.html">Réserver</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-titre">
+          <h2>Entrées</h2>
+          <p>Pour bien commencer</p>
+        </div>
+        <div class="grille">
+          <article class="carte">
+            <div class="emoji">🥟</div>
+            <h3>Gyozas (×6)</h3>
+            <p>Raviolis grillés au porc ou aux légumes, sauce soja-vinaigre.</p>
+            <span class="prix">7,50 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🫛</div>
+            <h3>Edamame <span class="etiquette">Végan</span></h3>
+            <p>Fèves de soja tièdes, fleur de sel.</p>
+            <span class="prix">5,00 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍤</div>
+            <h3>Tempura de crevettes</h3>
+            <p>Crevettes en beignet léger et croustillant, sauce tentsuyu.</p>
+            <span class="prix">9,00 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-titre">
+          <h2>Ramen &amp; plats</h2>
+          <p>Nouilles fraîches et bouillons maison</p>
+        </div>
+        <div class="grille">
+          <article class="carte">
+            <div class="emoji">🍜</div>
+            <h3>Shoyu ramen</h3>
+            <p>Bouillon au soja, porc chashu, œuf mariné, pousses de bambou.</p>
+            <span class="prix">15,50 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🌶️</div>
+            <h3>Tantan ramen <span class="etiquette epice">Épicé</span></h3>
+            <p>Bouillon sésame et piment, porc haché, pak choï.</p>
+            <span class="prix">16,50 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🥬</div>
+            <h3>Miso ramen <span class="etiquette">Végan</span></h3>
+            <p>Bouillon miso aux légumes, tofu grillé, maïs et champignons.</p>
+            <span class="prix">15,00 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍚</div>
+            <h3>Katsu donburi</h3>
+            <p>Bol de riz, poulet pané croustillant, oignons et œuf fondant.</p>
+            <span class="prix">16,00 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍣</div>
+            <h3>Plateau sushis (×12)</h3>
+            <p>Assortiment de nigiris et makis saumon, thon et avocat.</p>
+            <span class="prix">22,00 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍛</div>
+            <h3>Curry japonais</h3>
+            <p>Curry doux et réconfortant, riz et légumes mijotés.</p>
+            <span class="prix">14,50 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-titre">
+          <h2>Desserts &amp; boissons</h2>
+          <p>Une touche sucrée pour finir</p>
+        </div>
+        <div class="grille">
+          <article class="carte">
+            <div class="emoji">🍡</div>
+            <h3>Mochis glacés (×2)</h3>
+            <p>Matcha, fraise ou sésame noir.</p>
+            <span class="prix">6,50 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍮</div>
+            <h3>Purin</h3>
+            <p>La crème caramel japonaise, douce et tremblotante.</p>
+            <span class="prix">6,00 €</span>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍵</div>
+            <h3>Thé vert ou matcha latte</h3>
+            <p>Sencha chaud, ou matcha fouetté au lait chaud ou glacé.</p>
+            <span class="prix">4,50 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>Anaïs-ya 🏮 · Paris 17e · <a href="contact.html">Réserver une table</a></p>
+      <p class="mention">Restaurant fictif : site réalisé par Anaïs Billaud dans le cadre du BTS SIO option SLAM</p>
+    </div>
+  </footer>
+
+</body>
+</html>

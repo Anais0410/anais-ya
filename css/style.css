@@ -1,0 +1,360 @@
+/* =========================================================
+   Anaïs-ya — feuille de style commune aux 3 pages
+   Auteur : Anaïs Billaud - BTS SIO option SLAM
+   Approche "mobile first" : styles de base pour téléphone,
+   puis media queries pour tablette (≥ 700px) et ordinateur (≥ 1024px)
+   ========================================================= */
+
+/* ---------- 1. Variables (couleurs, arrondis, ombres) ---------- */
+:root {
+  --rose: #ff6fa8;
+  --rose-fonce: #e04e8a;
+  --rose-clair: #ffe3ee;
+  --creme: #fff8fb;
+  --blanc: #ffffff;
+  --matcha: #9ccf8a;
+  --vermillon: #e8484f;
+  --texte: #4a2b3d;
+  --texte-doux: #8d6479;
+  --arrondi: 24px;
+  --ombre: 0 10px 30px rgba(255, 111, 168, 0.18);
+}
+
+/* ---------- 2. Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Nunito", system-ui, sans-serif;
+  color: var(--texte);
+  background-color: var(--creme);
+  /* petits pois en fond, uniquement en CSS */
+  background-image: radial-gradient(var(--rose-clair) 2px, transparent 2px);
+  background-size: 28px 28px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .logo { font-family: "Fredoka", sans-serif; font-weight: 600; line-height: 1.2; }
+img { max-width: 100%; display: block; }
+a { color: var(--rose-fonce); }
+
+.conteneur { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.bouton {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--rose);
+  color: var(--blanc);
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: var(--ombre);
+  transition: transform 0.2s, background 0.2s;
+}
+.bouton:hover { transform: translateY(-3px); background: var(--rose-fonce); }
+.bouton.secondaire { background: var(--blanc); color: var(--rose-fonce); border: 2px solid var(--rose); }
+
+/* ---------- 3. En-tête et navigation ---------- */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px dashed var(--rose-clair);
+}
+.entete .conteneur { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.logo { font-size: 1.5rem; color: var(--rose); text-decoration: none; }
+
+/* Menu burger 100% CSS : une case à cocher cachée ouvre/ferme le menu */
+#burger-toggle { display: none; }
+.burger { font-size: 1.8rem; cursor: pointer; color: var(--rose); user-select: none; }
+
+.navigation {
+  display: none;               /* caché sur mobile par défaut */
+  position: absolute;
+  top: 70px; left: 0; right: 0;
+  background: var(--blanc);
+  flex-direction: column;
+  padding: 10px 20px 20px;
+  box-shadow: var(--ombre);
+  list-style: none;
+}
+#burger-toggle:checked ~ .navigation { display: flex; }   /* case cochée = menu visible */
+
+.navigation a {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--texte);
+  font-weight: 700;
+}
+.navigation a:hover, .navigation a.actif { background: var(--rose-clair); color: var(--rose-fonce); }
+
+/* ---------- 4. Bandeau d'accueil ---------- */
+.bandeau { padding: 50px 0; text-align: center; }
+.bandeau .conteneur { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.bandeau h1 { font-size: 2.2rem; }
+.bandeau h1 span { color: var(--rose); }
+.bandeau p { color: var(--texte-doux); font-size: 1.1rem; max-width: 520px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 10px; }
+
+/* Mascotte : chat (neko) dessiné uniquement en CSS */
+.mochi::before, .mochi::after {           /* les deux oreilles */
+  content: "";
+  position: absolute;
+  top: -18px;
+  width: 0; height: 0;
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-bottom: 46px solid var(--blanc);
+  filter: drop-shadow(0 -2px 2px rgba(255, 111, 168, 0.15));
+}
+.mochi::before { left: 22px; transform: rotate(-18deg); }
+.mochi::after { right: 22px; transform: rotate(18deg); }
+.mochi .moustache {
+  position: absolute; top: 92px;
+  width: 34px; height: 2px;
+  background: var(--texte-doux);
+  border-radius: 2px;
+}
+.mochi .moustache.gauche { left: 6px; transform: rotate(8deg); }
+.mochi .moustache.droite { right: 6px; transform: rotate(-8deg); }
+.lanterne { display: inline-block; color: var(--vermillon); }
+.mochi {
+  position: relative;
+  width: 200px; height: 160px;
+  background: var(--blanc);
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: var(--ombre), inset 0 -12px 0 var(--rose-clair);
+  animation: rebond 2.5s ease-in-out infinite;
+}
+.mochi .oeil {
+  position: absolute; top: 62px;
+  width: 14px; height: 18px;
+  background: var(--texte);
+  border-radius: 50%;
+}
+.mochi .oeil.gauche { left: 62px; }
+.mochi .oeil.droit { right: 62px; }
+.mochi .joue {
+  position: absolute; top: 86px;
+  width: 26px; height: 14px;
+  background: #ffb3cf;
+  border-radius: 50%;
+}
+.mochi .joue.gauche { left: 40px; }
+.mochi .joue.droite { right: 40px; }
+.mochi .bouche {
+  position: absolute; top: 84px; left: 50%;
+  width: 18px; height: 10px;
+  margin-left: -9px;
+  border: 3px solid var(--texte);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+}
+@keyframes rebond { 50% { transform: translateY(-12px) scale(1.03, 0.97); } }
+
+/* ---------- 5. Sections et cartes ---------- */
+.section { padding: 50px 0; }
+.section-titre { text-align: center; margin-bottom: 30px; }
+.section-titre h2 { font-size: 1.9rem; }
+.section-titre h2::after { content: " ♡"; color: var(--rose); }
+.section-titre p { color: var(--texte-doux); }
+
+.grille { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+.carte {
+  background: var(--blanc);
+  border-radius: var(--arrondi);
+  padding: 24px;
+  box-shadow: var(--ombre);
+  border: 2px solid var(--rose-clair);
+  transition: transform 0.2s;
+}
+.carte:hover { transform: translateY(-5px) rotate(-0.5deg); }
+.carte .emoji {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: var(--rose-clair);
+  display: grid; place-items: center;
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+.carte h3 { font-size: 1.25rem; margin-bottom: 6px; }
+.carte p { color: var(--texte-doux); font-size: 0.95rem; }
+.prix {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--rose);
+  color: var(--blanc);
+  font-weight: 700;
+}
+.etiquette {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--matcha);
+  color: var(--blanc);
+  font-size: 0.75rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.etiquette.epice { background: var(--vermillon); }
+
+/* Tableau des horaires */
+.horaires { width: 100%; border-collapse: collapse; }
+.horaires td { padding: 10px 6px; border-bottom: 2px dashed var(--rose-clair); }
+.horaires td:last-child { text-align: right; font-weight: 700; }
+.horaires tr:last-child td { border-bottom: none; }
+
+/* Citation / avis */
+.avis { text-align: center; font-style: italic; }
+.avis strong { display: block; margin-top: 10px; font-style: normal; color: var(--rose-fonce); }
+
+/* ---------- 6. Formulaire de contact ---------- */
+.formulaire { display: grid; gap: 16px; }
+.champ label { display: block; font-weight: 700; margin-bottom: 6px; }
+.champ input, .champ select, .champ textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--rose-clair);
+  border-radius: 16px;
+  font: inherit;
+  color: var(--texte);
+  background: var(--creme);
+  transition: border-color 0.2s;
+}
+.champ input:focus, .champ select:focus, .champ textarea:focus { outline: none; border-color: var(--rose); }
+/* Champ invalide (validation HTML5) : bordure rouge après saisie */
+.champ input[placeholder]:not(:placeholder-shown):invalid { border-color: #e5484d; }
+.formulaire .double { display: grid; gap: 16px; }
+
+.carte-map {
+  height: 220px;
+  border-radius: var(--arrondi);
+  background:
+    linear-gradient(90deg, transparent 48%, var(--blanc) 48%, var(--blanc) 52%, transparent 52%),
+    linear-gradient(0deg, transparent 48%, var(--blanc) 48%, var(--blanc) 52%, transparent 52%),
+    var(--rose-clair);
+  display: grid; place-items: center;
+  font-size: 3rem;
+}
+
+/* ---------- 7. Pied de page ---------- */
+.pied {
+  margin-top: 40px;
+  padding: 30px 0;
+  background: var(--rose);
+  color: var(--blanc);
+  text-align: center;
+  font-size: 0.9rem;
+}
+.pied a { color: var(--blanc); }
+.pied .mention { opacity: 0.85; margin-top: 6px; }
+
+/* =========================================================
+   8. Responsive — TABLETTE (à partir de 700px)
+   ========================================================= */
+@media (min-width: 700px) {
+  .grille { grid-template-columns: repeat(2, 1fr); }
+  .bandeau h1 { font-size: 2.8rem; }
+  .formulaire .double { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+/* =========================================================
+   9. Responsive — ORDINATEUR (à partir de 1024px)
+   ========================================================= */
+@media (min-width: 1024px) {
+  /* le burger disparaît, le menu s'affiche en ligne */
+  .burger { display: none; }
+  .navigation {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    gap: 6px;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  .bandeau { padding: 80px 0; text-align: left; }
+  .bandeau .conteneur { flex-direction: row; justify-content: space-between; }
+  .bandeau .boutons { justify-content: flex-start; }
+  .bandeau h1 { font-size: 3.4rem; }
+  .mochi { width: 280px; height: 220px; flex-shrink: 0; }
+  .mochi .oeil { top: 86px; }
+  .mochi .oeil.gauche { left: 90px; }
+  .mochi .oeil.droit { right: 90px; }
+  .mochi .joue { top: 116px; }
+  .mochi .joue.gauche { left: 58px; }
+  .mochi .joue.droite { right: 58px; }
+  .mochi .bouche { top: 112px; }
+  .mochi .moustache { top: 124px; width: 44px; }
+  .mochi::before { left: 34px; border-left-width: 34px; border-right-width: 34px; border-bottom-width: 60px; top: -26px; }
+  .mochi::after { right: 34px; border-left-width: 34px; border-right-width: 34px; border-bottom-width: 60px; top: -26px; }
+
+  .grille { grid-template-columns: repeat(3, 1fr); }
+  .grille.deux { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Accessibilité : moins d'animations si l'utilisateur le demande */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------- 10. Section "Le mot de la cheffe" ---------- */
+.cheffe { display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; }
+.cadre-photo { position: relative; width: 220px; height: 220px; flex-shrink: 0; margin-top: 30px; }
+.cadre-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid var(--blanc);
+  outline: 4px dashed var(--rose);
+  outline-offset: 6px;
+  box-shadow: var(--ombre);
+  position: relative;
+  z-index: 1;
+}
+/* oreilles de chat posées sur le cadre */
+.cadre-photo::before, .cadre-photo::after {
+  content: "";
+  position: absolute;
+  top: -22px;
+  width: 0; height: 0;
+  border-left: 34px solid transparent;
+  border-right: 34px solid transparent;
+  border-bottom: 58px solid var(--rose);
+  z-index: 0;
+}
+.cadre-photo::before { left: 10px; transform: rotate(-22deg); }
+.cadre-photo::after { right: 10px; transform: rotate(22deg); }
+.cadre-photo .fleur { position: absolute; font-size: 1.8rem; z-index: 2; animation: rebond 3s ease-in-out infinite; }
+.cadre-photo .fleur.f1 { bottom: 6px; left: -14px; }
+.cadre-photo .fleur.f2 { top: 40px; right: -20px; animation-delay: 1s; }
+.badge-cheffe {
+  position: absolute; bottom: -14px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  white-space: nowrap;
+  background: var(--rose);
+  color: var(--blanc);
+  font-family: "Fredoka", sans-serif;
+  padding: 6px 18px;
+  border-radius: 999px;
+  box-shadow: var(--ombre);
+}
+.cheffe blockquote { font-size: 1.1rem; color: var(--texte-doux); font-style: italic; max-width: 560px; }
+.cheffe blockquote strong { display: block; margin-top: 12px; font-style: normal; color: var(--rose-fonce); }
+
+@media (min-width: 1024px) {
+  .cheffe { flex-direction: row; text-align: left; justify-content: center; gap: 60px; }
+  .cadre-photo { width: 260px; height: 260px; }
+}

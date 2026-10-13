@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anaïs-ya, restaurant japonais fictif dans le 17e arrondissement de Paris : ramen, sushis, gyozas et desserts maison.">
+  <title>Anaïs-ya · Restaurant japonais · Paris 17e</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">Anaïs-ya <span class="lanterne">🏮</span></a>
+      <input type="checkbox" id="burger-toggle" aria-label="Ouvrir le menu">
+      <label for="burger-toggle" class="burger" aria-hidden="true">☰</label>
+      <ul class="navigation">
+        <li><a href="index.html" class="actif">Accueil</a></li>
+        <li><a href="carte.html">La carte</a></li>
+        <li><a href="contact.html">Réserver</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="bandeau">
+      <div class="conteneur">
+        <div>
+          <h1>Bienvenue chez <span>Anaïs-ya</span></h1>
+          <p>Un petit restaurant japonais au cœur du 17e arrondissement de Paris. Ramen mijotés pendant des heures, sushis préparés devant vous et desserts maison, dans une ambiance douce et chaleureuse.</p>
+          <div class="boutons">
+            <a href="carte.html" class="bouton">Découvrir la carte</a>
+            <a href="contact.html" class="bouton secondaire">Réserver une table</a>
+          </div>
+        </div>
+        <div class="mochi" aria-hidden="true">
+          <span class="oeil gauche"></span><span class="oeil droit"></span>
+          <span class="joue gauche"></span><span class="joue droite"></span>
+          <span class="moustache gauche"></span><span class="moustache droite"></span>
+          <span class="bouche"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-titre">
+          <h2>Nos spécialités</h2>
+          <p>Une cuisine japonaise familiale, faite maison chaque jour</p>
+        </div>
+        <div class="grille">
+          <article class="carte">
+            <div class="emoji">🍜</div>
+            <h3>Ramen maison</h3>
+            <p>Un bouillon mijoté pendant 12 heures, des nouilles fraîches et un œuf mariné au soja.</p>
+          </article>
+          <article class="carte">
+            <div class="emoji">🍣</div>
+            <h3>Sushis au comptoir</h3>
+            <p>Saumon, thon ou avocat : nos sushis sont roulés à la commande, sous vos yeux.</p>
+          </article>
+          <article class="carte">
+            <div class="emoji">🥟</div>
+            <h3>Gyozas grillés</h3>
+            <p>Raviolis croustillants dessous et fondants dessus, au porc ou aux légumes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-titre">
+          <h2>La formule du midi</h2>
+          <p>Du mardi au vendredi, servie rapidement</p>
+        </div>
+        <div class="grille deux">
+          <article class="carte">
+            <div class="emoji">🍱</div>
+            <h3>Bento du chef</h3>
+            <p>Un plat au choix (ramen, donburi ou assortiment de sushis), une soupe miso et un dessert du jour.</p>
+            <span class="prix">16,50 €</span>
+          </article>
+          <article class="carte">
+            <h3>Nos horaires</h3>
+            <table class="horaires">
+              <tr><td>Lundi</td><td>Fermé</td></tr>
+              <tr><td>Mardi → Vendredi</td><td>12h – 14h30 · 19h – 22h30</td></tr>
+              <tr><td>Samedi</td><td>12h – 15h · 19h – 23h</td></tr>
+              <tr><td>Dimanche</td><td>12h – 15h</td></tr>
+            </table>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-titre">
+          <h2>Le mot de la cheffe</h2>
+        </div>
+        <div class="carte cheffe">
+          <div class="cadre-photo">
+            <img src="images/anais.jpg" alt="Anaïs, la cheffe du restaurant">
+            <span class="fleur f1" aria-hidden="true">🌸</span>
+            <span class="fleur f2" aria-hidden="true">🌸</span>
+            <span class="badge-cheffe">Cheffe Anaïs</span>
+          </div>
+          <blockquote>
+            « J'ai ouvert Anaïs-ya pour partager ma passion de la cuisine japonaise : des plats simples, généreux et faits maison, servis avec le sourire. Installez-vous, on s'occupe de tout ! »
+            <strong>Anaïs, cheffe et fondatrice</strong>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <article class="carte avis">
+          <div class="emoji" style="margin:0 auto 14px">💬</div>
+          <p>« Le meilleur ramen du quartier, et l'équipe est adorable. On se croirait à Tokyo sans quitter les Batignolles ! »</p>
+          <strong>Exemple d'avis client</strong>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>Anaïs-ya 🏮 · Paris 17e · <a href="contact.html">Réserver une table</a></p>
+      <p class="mention">Restaurant fictif : site réalisé par Anaïs Billaud dans le cadre du BTS SIO option SLAM</p>
+    </div>
+  </footer>
+
+</body>
+</html>
